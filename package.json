@@ -1,0 +1,44 @@
+{
+  "name": "rollup-plugin-require-split-code",
+  "version": "0.0.0",
+  "description": "Enable code splitting with require()",
+  "keywords": [
+    "rollup-plugin",
+    "commonjs",
+    "cjs",
+    "require",
+    "splitting",
+    "transform"
+  ],
+  "main": "index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "eslint **/*.js --cache && nyc --reporter=html mocha",
+    "preversion": "npm test",
+    "postversion": "git push --follow-tags && npm publish"
+  },
+  "repository": "eight04/rollup-plugin-require-split-code",
+  "author": "eight04 <eight04@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "rollup": "^0.62.0",
+    "tempdir-yaml": "^0.2.1"
+  },
+  "dependencies": {
+    "estree-is-require": "^1.0.0",
+    "estree-walker": "^0.5.2",
+    "magic-string": "^0.25.0",
+    "rollup-pluginutils": "^2.3.0"
+  },
+  "peerDependencies": {
+    "rollup": ">=0.62"
+  },
+  "eslintIgnore": [
+    "coverage"
+  ]
+}
