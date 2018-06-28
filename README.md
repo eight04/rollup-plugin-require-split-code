@@ -18,10 +18,10 @@ Usage
 
 Mark the split point with `// split` comment:
 
-```
+```js
 function lazyLoadSomeModule() {
-  const foo = require("foo"); // split
-  // do something with foo...
+  const foo = require("./foo"); // split
+  console.log(foo);
 }
 
 module.exports = lazyLoadSomeModule;
@@ -46,6 +46,11 @@ export default {
   experimentalCodeSplitting: true
 };
 ```
+
+How it works
+------------
+
+This plugin converts `require("./foo.js")` into `_UNWRAP_IMPORT_(import("./foo.js"))` so that rollup would register "foo" as a dynamic import entry point and tries splitting "foo" into a separate file. After generating the bundle, the plugin converts `_UNWRAP_IMPORT_(Promise.resolve(require("./foo.js")))` back to `require("./foo.js")`.
 
 Options
 -------
