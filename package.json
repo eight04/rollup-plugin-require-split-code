@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-require-split-code",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Enable code splitting with require()",
   "keywords": [
     "rollup-plugin",
