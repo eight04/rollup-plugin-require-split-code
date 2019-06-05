@@ -9,11 +9,13 @@ describe("main", () => {
   async function bundleOutput(file) {
     const bundle = await rollup({
       input: [file],
-      plugins: [split()],
-      experimentalCodeSplitting: true
+      plugins: [split()]
     });
     const {output} = await bundle.generate({format: "cjs"});
-    return output;
+    return output.reduce((o, out) => {
+      o[out.fileName] = out;
+      return o;
+    }, {});
   }
   
   it("split code", () =>
@@ -28,7 +30,9 @@ describe("main", () => {
     `, async resolve => {
       const output = await bundleOutput(resolve("entry.js"));
       assert.equal(Object.keys(output).length, 2);
-      assert(output["entry.js"].code.includes('foo = require("./foo.js")'));
+      const fooFileName = Object.keys(output).find(n => n !== "entry.js");
+      const match = output["entry.js"].code.match(/foo = require\(['"]([^'"]+)/);
+      assert.equal(match[1], `./${fooFileName}`);
     })
   );
   

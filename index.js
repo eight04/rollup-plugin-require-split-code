@@ -23,11 +23,11 @@ function factory({include, exclude} = {}) {
         };
       }
     },
-    transformChunk(code, {format}) {
+    renderChunk(code, chunk, outputOptions) {
       if (!isImportWrapped) {
         return;
       }
-      if (format !== "cjs") {
+      if (!outputOptions || outputOptions.format !== "cjs") {
         throw new Error("output format must be 'cjs'");
       }
       const result = unwrapImport({
