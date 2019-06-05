@@ -36,7 +36,7 @@
     "rollup-pluginutils": "^2.8.1"
   },
   "peerDependencies": {
-    "rollup": ">=0.62"
+    "rollup": "^1.14.0"
   },
   "eslintIgnore": [
     "coverage"
