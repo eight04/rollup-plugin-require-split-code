@@ -1,7 +1,8 @@
 rollup-plugin-require-split-code
 ================================
 
-[![Build Status](https://travis-ci.org/eight04/rollup-plugin-require-split-code.svg?branch=master)](https://travis-ci.org/eight04/rollup-plugin-require-split-code)
+[![Build Status](https://travis-ci.com/eight04/rollup-plugin-require-split-code.svg?branch=master)](https://travis-ci.com/eight04/rollup-plugin-require-split-code)
+[![codecov](https://codecov.io/gh/eight04/rollup-plugin-require-split-code/branch/master/graph/badge.svg)](https://codecov.io/gh/eight04/rollup-plugin-require-split-code)
 [![install size](https://packagephobia.now.sh/badge?p=rollup-plugin-require-split-code)](https://packagephobia.now.sh/result?p=rollup-plugin-require-split-code)
 
 Enable code splitting with `require()`.
