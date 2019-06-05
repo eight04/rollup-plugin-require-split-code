@@ -66,6 +66,10 @@ An array of glob pattern. Matched files would not be processed. Default: `undefi
 Changelog
 ---------
 
+* 0.2.0 (Jun 5, 2019)
+
+  - Bump dependencies. Update rollup to 1.14.0.
+
 * 0.1.0 (Jun 29, 2018)
 
   - Pulled out from rollup-plugin-cjs-es.
